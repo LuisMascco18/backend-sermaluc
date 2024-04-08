@@ -13,4 +13,7 @@ public class ApplicationProperties {
     @Value("${property.type.password}")
     private String  passwordValue;
 
+    @Value("${property.type.email}")
+    private String  emailValue;
+
 }

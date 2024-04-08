@@ -33,8 +33,7 @@ public class UserServiceImpl implements IUserService {
         }
 
         //Validamos si el correo tiene el formato adecuado
-        if(!validarRegex(request.getEmail(),
-                "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$")){
+        if(!validarRegex(request.getEmail(),ap.getEmailValue())){
             throw new ModelNotFoundException("02");
         }
 
