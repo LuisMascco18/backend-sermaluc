@@ -55,6 +55,8 @@ public class UserServiceImplTest {
         request.setPhones(listPho);
         when(repo.save(any())).thenReturn(respuestaModel());
         when(ap.getPasswordValue()).thenReturn("^[a-zA-Z0-9]{7}$");
+        when(ap.getEmailValue()).thenReturn("^[a-zA-Z0-9_+&*-]+(?:\\.[a-" +
+                "zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$");
         UserResDTO response = service.registrar(request);
         Assertions.assertEquals(1,response.getId());
     }
